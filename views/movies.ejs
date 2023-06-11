@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/design.css" />
+    <title>MovieApp</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- data['results'].forEach((movie)=>{ -->
+
+      <% data["results"].forEach((movie)=>{ %>
+
+      <div class="card mb-3">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2<%=
+            movie["poster_path"]%>" class="card-img" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= movie["original_title"]%></h5>
+              <p class="card-text"><%= movie["overview"]%></p>
+              <p class="card-text">
+                RATING:
+                <small class="text-muted"><%= movie["vote_average"]%></small>
+              </p>
+              <p class="card-text">
+                Release Date:
+                <small class="text-muted"><%= movie["release_date"]%></small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% })%>
+
+      <!-- }); -->
+    </div>
+  </body>
+</html>
